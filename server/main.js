@@ -1,12 +1,11 @@
 var bleno = require('@abandonware/bleno');
-var CustomService = require('./custom-service');
+//var CustomService = require('./custom-service');
+var DeviceInformationService = require('./device-information-service');
 
-
-var name = 'TestPeriPheral';
-var primaryService = new CustomService();
+var name = 'peripheral-device';
+var primaryService = new DeviceInformationService();
 
 /*  Wait until BLE powers on before attemping to advertise
- *
  */
 bleno.on('stateChange', function(state) {
   console.log('bleno on -> stateChange : ' + state);
