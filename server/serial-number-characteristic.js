@@ -5,11 +5,10 @@ var bleno = require('@abandonware/bleno');
 var BlenoCharacteristic = bleno.Characteristic;
 var BlenoDescriptor = bleno.Descriptor;
 
-function SerialNumberCharacteristic() {
+var SerialNumberCharacteristic = function() {
   SerialNumberCharacteristic.super_.call(this, {
-    uuid: '2a25',
+    uuid: '2A19',
     properties: ['read'],
-    value: new Buffer(),
     descriptor: [
       new BlenoDescriptor({
         uuid: '2901',
