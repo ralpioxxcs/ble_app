@@ -1,9 +1,18 @@
+
 var bleno = require('@abandonware/bleno');
+
 //var CustomService = require('./custom-service');
-var DeviceInformationService = require('./device-information-service');
+//var DeviceInformationService = require('./device-information-service');
+var MessageService = require('./message-service');
 
 var name = 'peripheral-device';
-var primaryService = new DeviceInformationService();
+var primaryService = new MessageService();
+
+const getMessage = () => {
+  return Buffer.from(JSON.stringify({
+    message: 'Hello'
+  }, 'utf8'));
+};
 
 /*  Wait until BLE powers on before attemping to advertise
  */
